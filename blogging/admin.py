@@ -4,7 +4,7 @@ from .models import Post, Category
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
-    exclude = ('posts',)
+    exclude = ("posts",)
 
 
 class CategoryInLine(admin.TabularInline):

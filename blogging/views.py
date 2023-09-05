@@ -5,6 +5,7 @@ from .models import Post
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 
+
 def stub_view(request, *args, **kwargs):
     body = "Stub View\n\n"
     if args:
@@ -17,14 +18,18 @@ def stub_view(request, *args, **kwargs):
 
 
 # def list_view(request):
-    # published = Post.objects.exclude(published_date__exact=None)
+# published = Post.objects.exclude(published_date__exact=None)
 #     posts = published.order_by('-published_date')
 #     context = {'posts': posts}
 #     return render(request, 'blogging/list.html', context)
 class BlogListView(ListView):
     # model = Post
-    template_name = 'blogging/list.html'
-    queryset = Post.objects.exclude(published_date__exact=None).order_by('-published_date')
+    template_name = "blogging/list.html"
+    queryset = Post.objects.exclude(published_date__exact=None).order_by(
+        "-published_date"
+    )
+
+
 # def detail_view(request, post_id):
 #     published = Post.objects.exclude(published_date__exact=None)
 #     try:
@@ -35,7 +40,7 @@ class BlogListView(ListView):
 #     return render(request, 'blogging/detail.html', context)
 class BlogDetailView(DetailView):
     model = Post
-    template_name = 'blogging/detail.html'
-    queryset = Post.objects.exclude(published_date__exact=None).order_by('-published_date')
-
-
+    template_name = "blogging/detail.html"
+    queryset = Post.objects.exclude(published_date__exact=None).order_by(
+        "-published_date"
+    )
