@@ -36,12 +36,12 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "django.contrib.sites",  # new
-    "polling",
-    "blogging",
     "allauth",  # new
     "allauth.account",  # new
     "allauth.socialaccount",  # new
     "allauth.socialaccount.providers.github",  # new
+    "polling",
+    "blogging",
 ]
 
 MIDDLEWARE = [
@@ -128,7 +128,7 @@ LOGIN_REDIRECT_URL = "/"
 
 AUTHENTICATION_BACKENDS = (
     # "django.contrib.auth.backends.ModelBackend",
-    "allauth.account.auth_backends.AuthenticationBackend",
+    # "allauth.account.auth_backends.AuthenticationBackend",
 )
 
 SITE_ID = 1
