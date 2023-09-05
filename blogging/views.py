@@ -8,6 +8,8 @@ from rest_framework import viewsets
 from django.contrib.auth.models import User
 from rest_framework import permissions
 from .serializers import UserSerializer, PostSerializer, CategorySerializer
+
+
 def stub_view(request, *args, **kwargs):
     body = "Stub View\n\n"
     if args:
@@ -44,6 +46,7 @@ class UserViewSet(viewsets.ModelViewSet):
     serializer_class = UserSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
 
+
 class PostViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows users to be viewed or edited.
@@ -52,6 +55,7 @@ class PostViewSet(viewsets.ModelViewSet):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+
 
 class CategoryViewSet(viewsets.ModelViewSet):
     """
