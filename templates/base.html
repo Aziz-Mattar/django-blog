@@ -1,4 +1,6 @@
 {% load static %}
+{% load socialaccount %}
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,6 +16,7 @@
             <li><a href="{% url 'logout' %}">logout</a></li>
         {% else %}
             <li><a href="{% url 'login' %}">login</a></li>
+            <li><a href="{% provider_login_url 'github' %}">login with GitHub</a>            </li>
         {% endif %}
     </ul>
 </div>
